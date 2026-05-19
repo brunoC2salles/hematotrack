@@ -361,6 +361,10 @@ footer{background:var(--dark2);padding:36px 5vw 24px;border-top:1px solid rgba(2
 .master-soon-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-2deg);background:var(--b);color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.02em;padding:10px 32px;border-radius:100px;box-shadow:0 4px 20px rgba(1,90,120,.3);z-index:10;white-space:nowrap;pointer-events:none}
 .pcard-master-soon > *:not(.master-soon-overlay){opacity:.3;filter:blur(1.5px)}
 
+
+.pcards-clean{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:960px){.pcards-clean{grid-template-columns:1fr}}
+
 /* ── ANIMS ── */
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
@@ -705,8 +709,9 @@ footer{background:var(--dark2);padding:36px 5vw 24px;border-top:1px solid rgba(2
     <span class="tlbl">Anual</span>
     <span class="tdis">−2 meses</span>
   </div>
-  <div class="launch-wrap">
-    <div class="pcards" >
+  <div class="pcards-clean">
+
+      <!-- PRO — teal, disponível -->
       <div class="pcard pcard-pro">
         <div><span class="p-lbl p-lbl-w">PRO</span><h3 class="p-name" style="color:#fff">PRO</h3><p class="p-desc" style="color:rgba(255,255,255,.55)">Ideal para hematologistas independentes.</p></div>
         <div class="p-price"><span class="p-cur" style="color:rgba(255,255,255,.55)">R$</span><span class="p-amt" id="pAmt" style="color:#fff">497</span><span class="p-per" style="color:rgba(255,255,255,.4)">/mês</span></div>
@@ -716,19 +721,33 @@ footer{background:var(--dark2);padding:36px 5vw 24px;border-top:1px solid rgba(2
           <li>Suporte 24/7</li>
           <li>Acesso via Web e Mobile</li>
         </ul>
-        <a href="https://app.hematotrack.com.br/entrar" class="p-btn p-btn-w" target="_blank" rel="noopener">Começar Agora</a></div>
-      <div class="pcard pcard-master-soon">
+        <a href="https://app.hematotrack.com.br/entrar" class="p-btn p-btn-w" target="_blank" rel="noopener">Começar Agora</a>
+      </div>
+
+      <!-- MASTER — branco, em breve -->
+      <div class="pcard pcard-master-soon" style="position:relative;overflow:hidden">
         <div class="master-soon-overlay">Em breve</div>
-        <div><span class="p-lbl gold">Mais popular</span><h3 class="p-name" style="color:#0a0a0a">MASTER</h3><p class="p-desc" style="color:#888">A potência máxima da plataforma.</p></div>
-        <div class="p-price"><span class="p-cur" style="color:#aaa">R$</span><span class="p-amt" id="mAmt" style="color:#0a0a0a">679</span><span class="p-per" style="color:#aaa">/mês</span></div>
-        <ul class="pfeats">
+        <div style="opacity:.3;filter:blur(1.5px)">
+          <span class="p-lbl gold">Mais popular</span>
+          <h3 class="p-name" style="color:#0a0a0a">MASTER</h3>
+          <p class="p-desc" style="color:#888">A potência máxima da plataforma.</p>
+        </div>
+        <div class="p-price" style="opacity:.3;filter:blur(1.5px)">
+          <span class="p-cur" style="color:#aaa">R$</span>
+          <span class="p-amt" id="mAmt" style="color:#0a0a0a">679</span>
+          <span class="p-per" style="color:#aaa">/mês</span>
+        </div>
+        <ul class="pfeats" style="opacity:.3;filter:blur(1.5px)">
           <li>Tudo do plano PRO</li>
           <li>Integração Agente WhatsApp</li>
           <li>Dashboards avançados</li>
           <li>Suporte prioritário</li>
           <li>API para integrações</li>
         </ul>
-        <button class="p-btn">Em breve</button>
+        <button class="p-btn" style="opacity:.3;filter:blur(1.5px)">Em breve</button>
+      </div>
+
+      <!-- CLÍNICA — separado, on demand -->
       <div class="pcard">
         <div><span class="p-lbl">CLÍNICA</span><h3 class="p-name">CLÍNICA</h3><p class="p-desc">Para clínicas e hospitais.</p></div>
         <div class="p-price"><span class="p-sob">Sob medida</span></div>
@@ -741,10 +760,8 @@ footer{background:var(--dark2);padding:36px 5vw 24px;border-top:1px solid rgba(2
         </ul>
         <a href="https://wa.me/5555924810050?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20plano%20Cl%C3%ADnica%20do%20Hematotrack!" class="p-btn" target="_blank" rel="noopener">Falar com Vendas</a>
       </div>
-    </div>
 
-  </div>
-  </div>
+    </div></div>
 </section>
 
 <!-- DEPOIMENTOS -->
